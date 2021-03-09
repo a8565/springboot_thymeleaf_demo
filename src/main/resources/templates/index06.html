@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index06</title>
+</head>
+<body>
+<!--时间格式化 内置方法#dates.format，参数date-->
+当前时间：<span th:text="${#dates.format(date,'yyyy年MM月dd日 hh:mm:ss')}"></span>
+<br>
+<!--数字格式化 内置方法#numbers.formatDecimal 参数一：接收变量  参数二：整数位保留一位 0.12 .12  参数三：小数位保留两位 并四舍五入 -->
+数字格式化：<span th:text="${#numbers.formatDecimal(number,1,2)}"></span>
+<br>
+<!--关于字符串显示格式内置方法#strings.abbreviate 60代表从头开始60个数-->
+<span th:text="${#strings.abbreviate(str,60)}"></span><br>
+<!--关于字符串显示格式内置方法#strings.abbreviate 2位截取40位（注意不是个数，是本身的位数） -->
+<span th:text="${#strings.substring(str,2,40)}"></span><br>
+<!--判断是否为空，为空显示1234-->
+<span th:if="${#strings.isEmpty(str)}">1234</span>
+</body>
+</html>
